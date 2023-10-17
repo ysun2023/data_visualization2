@@ -28,53 +28,59 @@
     <div class="pure-g">
         <div class="pure-u-1-1">
             <h1>World Happiness Dashboard</h1>
-            <p>Explore the intriguing world of happiness scores, diving deep into how various factors collectively influence the happiness levels across different countries and regions.</p>
-        </div>
+        <p>Welcome to the World Happiness Dashboard, a comprehensive visual exploration into the dynamics of happiness across the globe. This interactive platform illuminates the multifaceted nature of happiness, demonstrating how geographical, economic, social, and health factors converge to shape the global landscape of well-being. Journey through vivid visualizations that reveal disparities and correlations, from the color gradients of happiness across continents to the intricate interplay of GDP, generosity, and contentment. Discover the elements that resonate with joy in various cultures and societies, and delve into data-driven stories that speak volumes about our collective pursuit of happiness.</p>
+    </div>
     </div>
 
-    <!-- Map Section -->
-    <div class="pure-g">
-        <div class="pure-u-1-1">
-            <div id="vis1" class="vis-container-map"></div>
-            <div class="description description-left">
-                <h2>Global Happiness Map</h2>
-                <p>Embark on a journey across the global happiness landscape, unraveling how happiness scores are distributed worldwide. The color intensity in the map above depicts the happiness score of each country, providing a visual representation of global happiness disparities.</p>
-            </div>
+ <!-- Map Section -->
+<div class="pure-g">
+    <div class="pure-u-1-1">
+        <div id="vis1" class="vis-container-map"></div>
+        <div class="description description-left">
+            <h2>Global Happiness Map</h2>
+            <p>Embark on a journey across the global happiness landscape, unraveling how happiness scores are distributed worldwide. The color intensity in the map above depicts the happiness score of each country, providing a visual representation of global happiness disparities. We can clearly see that the darker the area, the higher the happiness score. Notably, Europe, America, Australia, and New Zealand exhibit darker colors, indicating higher happiness scores compared to other regions.</p>
         </div>
     </div>
+</div>
 
-    <!-- Bubble Chart Section -->
-    <div class="pure-g">
-        <div class="pure-u-1-1">
-            <div id="vis2" class="vis-container-bubble"></div>
-            <div class="description description-left">
-                <h2>Delving into Happiness Factors</h2>
-                <p>Unveil the correlations between GDP per Capita and happiness scores while exploring how other factors like generosity (size of the bubble) and region (color of the bubble) play roles in shaping happiness levels across countries. The bubble chart offers a more granular perspective, presenting a multidimensional view of the factors contributing to happiness.</p>
-            </div>
+<!-- Bubble Chart Section -->
+<div class="pure-g">
+    <div class="pure-u-1-1">
+        <div id="vis2" class="vis-container-bubble"></div>
+        <div class="description description-left">
+            <h2>Delving into Happiness Factors</h2>
+            <p>Unveil the correlations between GDP per Capita and happiness scores while exploring how other factors like generosity (size of the bubble) and region (color of the bubble) play roles in shaping happiness levels across countries. The bubble chart offers a more granular perspective, presenting a multidimensional view of the factors contributing to happiness. Most Western Europe countries, Australia, and New Zealand, for instance, display high happiness scores alongside high GDP, suggesting a potential relationship. Furthermore, countries with higher happiness scores tend to exhibit greater generosity.</p>
         </div>
     </div>
+</div>
 
-    <!-- New Stack Bars Section -->
-    <div class="pure-g">
-        <div class="pure-u-1-1">
-            <div id="vis3" class="vis-container-stacked-bar"></div>
-            <div class="description description-left">
-                <h2>Stacked Bars of Happiness Factors</h2>
-                <p>Discover how different factors contribute to happiness across regions by delving into the stacked bars. Each color represents a unique factor, providing insights into what drives happiness globally.</p>
-            </div>
-        </div>
+<!-- Stacked Bars and Boxplot Section -->
+<div class="pure-g">
+    <div class="pure-u-1-2">
+        <div id="vis3" class="vis-container-stacked-bar"></div>
     </div>
+    <div class="pure-u-1-2">
+        <div id="vis4" class="vis-container-boxplot"></div>
+    </div>
+</div>
 
-    <!-- New Boxplot Section -->
-    <div class="pure-g">
-        <div class="pure-u-1-1">
-            <div id="vis4" class="vis-container-boxplot"></div>
-            <div class="description description-left">
-                <h2>Happiness Score Distribution</h2>
-                <p>Explore the distribution of happiness scores across regions through the boxplot. The boxplot unveils the spread and central tendency of happiness scores, revealing regional disparities and similarities.</p>
-            </div>
+<!-- Descriptions for Stacked Bars and Boxplot -->
+<div class="pure-g">
+    <div class="pure-u-1-2">
+        <div class="description description-left">
+            <h2>Stacked Bars of Happiness Factors</h2>
+            <p>Discover how different factors contribute to happiness across regions by delving into the stacked bars. Each color represents a unique factor, providing insights into what drives happiness globally. This chart distinctly shows how average happiness, economy, family, health, and freedom contribute to overall happiness. Regions with higher happiness scores generally exhibit higher scores in these categories as well.</p>
         </div>
     </div>
+    <div class="pure-u-1-2">
+        <div class="description description-right">
+            <h2>Happiness Score Distribution</h2>
+            <p>Explore the distribution of happiness scores across regions through the boxplot. The boxplot unveils the spread and central tendency of happiness scores, revealing regional disparities and similarities. While Australia and New Zealand are not separately depicted due to proximity, they share a high median happiness score of 7.3, on par with North America. The median score is particularly insightful, highlighting the overall happiness level of a region, as evidenced by Sub-Saharan Africa's lower scores. In regions with a wide range of scores, this diversity significantly impacts the overall regional score.</p>
+        </div>
+    </div>
+</div>
+
+
 
     <div class="pure-g">
         <div class="pure-u-1-1 small-font">

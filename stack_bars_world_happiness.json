@@ -1,0 +1,96 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://ysun2023.github.io/data_visualization2/2016.csv"
+  },
+  "transform": [
+    {
+      "calculate": "datum.Region === 'Australia and New Zealand' ? 'ANZ' : (datum.Region === 'Central and Eastern Europe' ? 'CAEE' : (datum.Region === 'Eastern Asia' ? 'EA' : (datum.Region === 'Latin America and Caribbean' ? 'LAC' : (datum.Region === 'Middle East and Northern Africa' ? 'MENA' : (datum.Region === 'North America' ? 'NA' : (datum.Region === 'Southeastern Asia' ? 'SEA' : (datum.Region === 'Southern Asia' ? 'SA' : (datum.Region === 'Sub-Saharan Africa' ? 'SSA' : (datum.Region === 'Western Europe' ? 'WE' : datum.Region)))))))))",
+      "as": "RegionAbbrev"
+    },
+    {
+      "aggregate": [
+        {
+          "op": "mean",
+          "field": "Happiness Score",
+          "as": "Average Happiness"
+        },
+        {
+          "op": "mean",
+          "field": "Economy (GDP per Capita)",
+          "as": "Economy"
+        },
+        {
+          "op": "mean",
+          "field": "Family",
+          "as": "Family"
+        },
+        {
+          "op": "mean",
+          "field": "Health (Life Expectancy)",
+          "as": "Health"
+        },
+        {
+          "op": "mean",
+          "field": "Freedom",
+          "as": "Freedom"
+        }
+      ],
+      "groupby": ["RegionAbbrev", "Region"]
+    },
+    {
+      "fold": [
+        "Average Happiness",
+        "Economy",
+        "Family",
+        "Health",
+        "Freedom"
+      ],
+      "as": ["Happiness Factor", "Value"]
+    }
+  ],
+  "mark": "bar",
+  "encoding": {
+    "y": {
+      "field": "RegionAbbrev",
+      "type": "ordinal",
+      "axis": {"title": "Region"},
+      "sort": {"op": "sum", "field": "Value", "order": "descending"} 
+    },
+    "x": {
+      "field": "Value",
+      "type": "quantitative",
+      "stack": "zero",
+      "axis": {"title": "Component Scores Contributing to Happiness"}
+    },
+    "color": {
+      "field": "Happiness Factor",
+      "type": "nominal",
+      "legend": {"title": "Happiness Factors"},
+      "scale": {
+        "domain": [
+          "Average Happiness",
+          "Economy",
+          "Family",
+          "Health",
+          "Freedom"
+        ],
+        "range": [
+          "#9467bd",
+          "#1f77b4",
+          "#ff7f0e",
+          "#2ca02c",
+          "#d62728"
+        ]
+      }
+    },
+    "tooltip": [
+      {"field": "Region", "type": "nominal", "title": "Region Full Name"},
+      {"field": "Average Happiness", "type": "quantitative", "title": "Average Happiness Score"},
+      {"field": "Economy", "type": "quantitative"},
+      {"field": "Family", "type": "quantitative"},
+      {"field": "Health", "type": "quantitative"},
+      {"field": "Freedom", "type": "quantitative"}
+    ]
+  }
+}
