@@ -28,11 +28,19 @@ body {
     height: 375px; 
 }
 
-.vis-container-bar {
+.vis-container-stacked-bar {
     width: 60%;
     height: 300px;
     margin: auto;
 }
+
+
+.vis-container-boxplot {
+    width: 60%;
+    height: 300px;
+    margin: auto;
+}
+
 
 .description h2,
 h1 {

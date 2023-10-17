@@ -54,32 +54,45 @@
         </div>
     </div>
 
-    <!-- New Bar Chart Section -->
+    <!-- New Stack Bars Section -->
     <div class="pure-g">
         <div class="pure-u-1-1">
-            <div id="vis3" class="vis-container-bar"></div>
+            <div id="vis3" class="vis-container-stacked-bar"></div>
             <div class="description description-left">
-                <h2>Regional Averages in Happiness</h2>
-                <p>Drilling down further, we explore the average happiness scores across various regions. The bar chart reveals substantial disparities in happiness levels between different global regions. Notably, regions such as Western Europe and North America consistently secure higher average scores, correlating with their stronger economic performance and higher GDP per Capita as seen in the bubble chart above. The red line indicates the global average happiness score, offering a reference point to gauge regional performances. The connectivity in data storytelling here lies in exploring how macro-level regional averages and micro-level country-specific data jointly narrate the global happiness story.</p>
+                <h2>Stacked Bars of Happiness Factors</h2>
+                <p>Discover how different factors contribute to happiness across regions by delving into the stacked bars. Each color represents a unique factor, providing insights into what drives happiness globally.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- New Boxplot Section -->
+    <div class="pure-g">
+        <div class="pure-u-1-1">
+            <div id="vis4" class="vis-container-boxplot"></div>
+            <div class="description description-left">
+                <h2>Happiness Score Distribution</h2>
+                <p>Explore the distribution of happiness scores across regions through the boxplot. The boxplot unveils the spread and central tendency of happiness scores, revealing regional disparities and similarities.</p>
             </div>
         </div>
     </div>
 
     <div class="pure-g">
         <div class="pure-u-1-1 small-font">
-            <p>This visualization is created by <a href="https://github.com/ysun2023/week10_homework" target="_blank">YingHua Sun</a>. The datasource is <a href="#" target=" _blank">some data repository online</a>.</p>
+            <p>This visualization is created by <a href="https://ysun2023.github.io/data_visualization2" target="_blank">YingHua Sun</a>. The datasource is <a href="https://github.com/ysun2023/data_visualization2" target=" _blank">repository online</a>.</p>
         </div>
     </div>
 </div>
 
 <script type="text/javascript">
     var specVis1 = "./world_happiness_map.json";
-    var specVis2 = "./world_happiness.json";
-    var specVis3 = "./average_happiness_per_region.json";  
+    var specVis2 = "./bubble_chart_happiness.json";
+    var specVis3 = "./stack_bars_world_happiness.json";  
+    var specVis4 = "./boxplot_happiness.json";  
 
     vegaEmbed('#vis1', specVis1, {"actions": false});
     vegaEmbed('#vis2', specVis2, {"actions": false});
     vegaEmbed('#vis3', specVis3, {"actions": false});
+    vegaEmbed('#vis4', specVis4, {"actions": false});
 </script>
 
 </body>
