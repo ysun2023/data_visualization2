@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "data": {
-    "url": "https://ysun2023.github.io/week10_homework/data/2016.csv"
+    "url": "https://ysun2023.github.io/data_visualization2/2016.csv"
   },
   "transform": [
     {

@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "description": "A horizontal box plot showing median, min, and max happiness scores of countries within each region.",
-    "data": {"url": "https://ysun2023.github.io/week10_homework/data/2016.csv"},
+    "data": {"url": "https://ysun2023.github.io/data_visualization2/2016.csv"},
     "mark": {
       "type": "boxplot",
       "extent": "min-max"
