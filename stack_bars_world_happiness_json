@@ -1,0 +1,91 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://ysun2023.github.io/week10_homework/data/2016.csv"
+  },
+  "transform": [
+    {
+      "aggregate": [
+        {
+          "op": "mean",
+          "field": "Happiness Score",
+          "as": "Average Happiness"
+        },
+        {
+          "op": "mean",
+          "field": "Economy (GDP per Capita)",
+          "as": "Economy"
+        },
+        {
+          "op": "mean",
+          "field": "Family",
+          "as": "Family"
+        },
+        {
+          "op": "mean",
+          "field": "Health (Life Expectancy)",
+          "as": "Health"
+        },
+        {
+          "op": "mean",
+          "field": "Freedom",
+          "as": "Freedom"
+        }
+      ],
+      "groupby": ["Region"]
+    },
+    {
+      "calculate": "datum.Economy + datum.Family + datum.Health + datum.Freedom",
+      "as": "Happiness Factors"
+    },
+    {
+      "fold": [
+        "Economy",
+        "Family",
+        "Health",
+        "Freedom"
+      ],
+      "as": ["Happiness Factor", "Value"]
+    }
+  ],
+  "mark": "bar",
+  "encoding": {
+    "y": {
+      "field": "Region",
+      "type": "ordinal",
+      "axis": {"title": "Region"},
+      "sort": {"op": "sum", "field": "Value", "order": "descending"} 
+    },
+    "x": {
+      "field": "Value",
+      "type": "quantitative",
+      "stack": "zero",
+      "axis": {"title": "Average Happiness Score"}
+    },
+    "color": {
+      "field": "Happiness Factor",
+      "type": "nominal",
+      "legend": {"title": "Happiness Factors"},
+      "scale": {
+        "domain": [
+          "Economy",
+          "Family",
+          "Health",
+          "Freedom"
+        ],
+        "range": [
+          "#1f77b4",
+          "#ff7f0e",
+          "#2ca02c",
+          "#d62728"
+        ]
+      }
+    },
+    "tooltip": [
+      {"field": "Economy", "type": "quantitative"},
+      {"field": "Family", "type": "quantitative"},
+      {"field": "Health", "type": "quantitative"},
+      {"field": "Freedom", "type": "quantitative"}
+    ]
+  }
+}
